@@ -1,0 +1,40 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	<wave:sdk aura:id="sdk"/>
+	<aura:registerEvent name="update" type="wave:update"/>
+
+	<aura:attribute name="developerName" type="String"/>
+	<aura:attribute name="datasetId" type="String"/>
+	<aura:attribute name="datasetName" type="String"/>
+	<aura:attribute name="fieldName" type="String"/>
+	<aura:attribute name="minValue" type="Integer"/>
+	<aura:attribute name="maxValue" type="Integer"/>
+
+	<aura:attribute name="setIntervalId" type="Integer"/>
+	<aura:attribute name="showOrder" type="Integer" default="1"/>
+  	<aura:attribute name="delay" type="Integer" default="1"/>
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+  	<div class="container">
+		<lightning:layout verticalAlign="center">
+			<lightning:layoutItem padding="around-small">
+				<ui:inputNumber value="{!v.minValue}" label="Min:"></ui:inputNumber>
+			</lightning:layoutItem>	
+			<lightning:layoutItem padding="around-small">
+				<ui:inputNumber value="{!v.maxValue}" label="Max:"></ui:inputNumber>
+			</lightning:layoutItem>	
+			<lightning:layoutItem padding="around-small">
+				<ui:inputNumber value="{!v.showOrder}" label="Current:"></ui:inputNumber>
+			</lightning:layoutItem>
+			<lightning:layoutItem padding="around-small">
+				<ui:inputNumber value="{!v.delay}" label="Delay (sec.):" ></ui:inputNumber>
+			</lightning:layoutItem>
+			<lightning:layoutItem padding="around-small">
+				<ui:button press="{!c.handleAutomate}" label="Start"/>				
+			</lightning:layoutItem>
+			<lightning:layoutItem padding="around-small">				
+				<ui:button press="{!c.handleDestroy}" label="Stop"/>
+			</lightning:layoutItem>
+		</lightning:layout>
+  	</div>
+</aura:component>

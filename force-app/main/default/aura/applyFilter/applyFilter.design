@@ -1,0 +1,18 @@
+<design:component label="Dashboard Auto Filter">
+    <design:attribute 
+        name="delay" 
+        label="Delay" 
+        description="Delay in seconds between each refresh."/>
+    <design:attribute 
+        name="developerName" 
+        label="Dashboard Name"
+        description="The Analytics Dashboard (developer name) to send the filter to"/>
+    <design:attribute 
+        name="datasetId" 
+        label="Dataset Id"
+        description="The Dataset Id to filter on"/>
+    <design:attribute 
+        name="fieldName" 
+        label="Field Name"
+        description="The Field (api name) to filter to"/>    
+</design:component>
