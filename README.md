@@ -1,8 +1,12 @@
 # Salesforce App
 
+The goal of this solution is to automatically and dynamically change a dashboard to produce an animation-like effect.
+
+The solution consists of the the following items.  
+
 ## Einstein Analytics
 
-A few assets that contribute
+A few assets that contribute to the solution
 
 ### Dataflow
 
